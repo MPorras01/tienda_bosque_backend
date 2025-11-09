@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tienda-backend
+  
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/tienda_db
+      # O para MongoDB Atlas:
+      # uri: mongodb+srv://usuario:password@cluster.mongodb.net/tienda_db
+
+  # Configuración CORS
+  web:
+    cors:
+      allowed-origins: http://localhost:5173
+      allowed-methods: GET, POST, PUT, DELETE, OPTIONS
+      allowed-headers: "*"
+      allow-credentials: true
+
+logging:
+  level:
+    com.bosquebrisa: DEBUG
+    org.springframework.web: INFO
