@@ -55,6 +55,7 @@ public class ProductService {
         existingProduct.setIcon(product.getIcon());
         existingProduct.setCategory(product.getCategory());
         existingProduct.setStock(product.getStock());
+        existingProduct.setImages(product.getImages());
         existingProduct.setImageUrl(product.getImageUrl());
         
         Product updatedProduct = productRepository.save(existingProduct);
@@ -77,11 +78,12 @@ public class ProductService {
         dto.setIcon(product.getIcon());
         dto.setCategory(product.getCategory());
         dto.setStock(product.getStock());
+        dto.setImages(product.getImages());
         dto.setImageUrl(product.getImageUrl());
         return dto;
     }
     
     private String formatPrice(Double price) {
-        return currencyFormatter.format(price).replace("$", "$").replace(".00", "");
+        return currencyFormatter.format(price).replace("$", "COP: ").replace(".00", "");
     }
 }

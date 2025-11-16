@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
+import java.util.List;
+import java.util.ArrayList;
 
 @Data
 @NoArgsConstructor
@@ -35,6 +37,8 @@ public class Product {
     private Integer stock;
     
     private Boolean active = true;
+    
+    private List<String> images = new ArrayList<>();
     
     private String imageUrl;
 }
